@@ -12,16 +12,23 @@
 		543D12C820E06F2B002A0B7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543D12C620E06F2B002A0B7A /* Main.storyboard */; };
 		543D12CA20E06F32002A0B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543D12C920E06F32002A0B7A /* Assets.xcassets */; };
 		543D12CD20E06F32002A0B7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543D12CB20E06F32002A0B7A /* LaunchScreen.storyboard */; };
+		543D12D820E0717A002A0B7A /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D12D720E0717A002A0B7A /* NetworkInfo.swift */; };
+		543D130120F73E60002A0B7A /* CTNetworkInfoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D12D920E071A5002A0B7A /* CTNetworkInfoFactory.swift */; };
+		543D13052105D0A2002A0B7A /* StatusBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D13042105D0A2002A0B7A /* StatusBarInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		543D12BF20E06F2B002A0B7A /* Radio Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radio Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543D12C220E06F2B002A0B7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		543D12C420E06F2B002A0B7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		543D12C420E06F2B002A0B7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Network Information/Controller/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		543D12C720E06F2B002A0B7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		543D12C920E06F32002A0B7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543D12CC20E06F32002A0B7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543D12CE20E06F32002A0B7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543D12D720E0717A002A0B7A /* NetworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
+		543D12D920E071A5002A0B7A /* CTNetworkInfoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTNetworkInfoFactory.swift; sourceTree = "<group>"; };
+		543D130020F739BD002A0B7A /* CoreTelephony.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CoreTelephony.h; sourceTree = "<group>"; };
+		543D13042105D0A2002A0B7A /* StatusBarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +45,7 @@
 		543D12B620E06F2B002A0B7A = {
 			isa = PBXGroup;
 			children = (
+				543D12DB20E07806002A0B7A /* Network Information */,
 				543D12C120E06F2B002A0B7A /* Radio Tool */,
 				543D12C020E06F2B002A0B7A /* Products */,
 			);
@@ -54,14 +62,57 @@
 		543D12C120E06F2B002A0B7A /* Radio Tool */ = {
 			isa = PBXGroup;
 			children = (
-				543D12C220E06F2B002A0B7A /* AppDelegate.swift */,
-				543D12C420E06F2B002A0B7A /* ViewController.swift */,
-				543D12C620E06F2B002A0B7A /* Main.storyboard */,
 				543D12C920E06F32002A0B7A /* Assets.xcassets */,
-				543D12CB20E06F32002A0B7A /* LaunchScreen.storyboard */,
 				543D12CE20E06F32002A0B7A /* Info.plist */,
 			);
 			path = "Radio Tool";
+			sourceTree = "<group>";
+		};
+		543D12D420E06F45002A0B7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				543D12FA20F73717002A0B7A /* Private */,
+				543D12D720E0717A002A0B7A /* NetworkInfo.swift */,
+				543D13042105D0A2002A0B7A /* StatusBarInfo.swift */,
+				543D12D920E071A5002A0B7A /* CTNetworkInfoFactory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		543D12D520E06F81002A0B7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				543D12C620E06F2B002A0B7A /* Main.storyboard */,
+				543D12CB20E06F32002A0B7A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		543D12D620E06FCA002A0B7A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				543D12C220E06F2B002A0B7A /* AppDelegate.swift */,
+				543D12C420E06F2B002A0B7A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		543D12DB20E07806002A0B7A /* Network Information */ = {
+			isa = PBXGroup;
+			children = (
+				543D12D420E06F45002A0B7A /* Model */,
+				543D12D520E06F81002A0B7A /* View */,
+				543D12D620E06FCA002A0B7A /* Controller */,
+			);
+			path = "Network Information";
+			sourceTree = "<group>";
+		};
+		543D12FA20F73717002A0B7A /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				543D130020F739BD002A0B7A /* CoreTelephony.h */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +188,9 @@
 			files = (
 				543D12C520E06F2B002A0B7A /* ViewController.swift in Sources */,
 				543D12C320E06F2B002A0B7A /* AppDelegate.swift in Sources */,
+				543D13052105D0A2002A0B7A /* StatusBarInfo.swift in Sources */,
+				543D130120F73E60002A0B7A /* CTNetworkInfoFactory.swift in Sources */,
+				543D12D820E0717A002A0B7A /* NetworkInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +335,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77Q36D2C3;
 				INFOPLIST_FILE = "Radio Tool/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-I${SRCROOT}/";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prasha.Radio-Tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -298,11 +355,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77Q36D2C3;
 				INFOPLIST_FILE = "Radio Tool/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-I${SRCROOT}/";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prasha.Radio-Tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
